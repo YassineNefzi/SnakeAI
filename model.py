@@ -49,12 +49,10 @@ class QTrainer:
             reward = torch.unsqueeze(reward, 0)
             done = (done,)
 
-        # 1. predicted Q values with current state
         prediction = self.model(state)
 
         target = prediction.clone()
-        # target = target.detach()
-        # 2. Q_new = R + gamma * max(next_predicted Q value) -> only do this if not done
+
         for idx in range(len(done)):
             Q_new = reward[idx]
             if not done[idx]:
