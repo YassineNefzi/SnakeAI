@@ -18,7 +18,8 @@ class Agent:
         self.epsilon = 0  # randomness
         self.gamma = 0  # discount rate
         self.memory = deque(maxlen=MAX_MEMORY)  # popleft()
-        # self.model = None
+        self.model = None
+        self.trainer = None
 
     def get_state(self, game):
 
@@ -64,14 +65,14 @@ class Agent:
         return np.array(state, dtype=int)
 
     def remember(self, state, action, reward, next_state, done):
-
-        self.memory.append(state, action, reward, next_state, done)
+        self.memory.append((state, action, reward, next_state, done))
 
     def train_long_memory(self):
-        pass
+        if len(self.memory) > BATCH_SIZE:
+            mini_sample = random.sample(self.memory, BATCH_SIZE)  # list of tuples
 
     def train_short_memory(self, state, action, reward, next_state, done):
-        pass
+        self.trainer.train_step(state, action, reward, next_state, done)
 
     def get_action(self, state):
         pass
