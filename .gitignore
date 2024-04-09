@@ -22,10 +22,7 @@ rad.json
 TestResults.xml
 
 snake_env
-__pychache__
-__pychache__/
-/__pychache__/
+
+__pycache__/
 
 model/
-/model
-/model/
