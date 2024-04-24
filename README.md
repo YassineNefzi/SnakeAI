@@ -1,4 +1,6 @@
-# SnakeAI: Reinforcement Learning Snake Game
+<h1 align="center">SnakeAI</h1>
+
+![PerroAI](https://github.com/YassineNefzi/SnakeAI/blob/main/snakeai.jfif)
 
 
 This project implements a reinforcement learning model trained to play the classic Snake game. It's inspired by a tutorial from freeCodeCamp which can be found [here.](https://www.youtube.com/watch?v=L8ypSXwyBds)
